@@ -12,9 +12,9 @@ const App = {
     const config = {
       disableMobile: true,
       inline: true,
+      locale: 'ja',
     };
     self.calendar = $('.selector').flatpickr(config);
-    // calendar.open();
   },
 
   eventLoader: function() {
