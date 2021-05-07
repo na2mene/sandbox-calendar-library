@@ -16,7 +16,7 @@ const App = {
       inline: true,
       locale: 'ja',
       altInput: true,
-      altFormat: "",
+      altFormat: '',
       dateFormat: 'Y-m-d',
       onChange: self.onChangeCalendar,
     };
@@ -33,7 +33,6 @@ const App = {
   },
 
   onSubmit: function() {
-    const $submitEl = $('.submitBtn');
     const preferredDate1 = `${$('#selectedate-h-1').val()}:${$('#selectedate-m-1').val()}`;
     const preferredDate2 = `${$('#selectedate-h-2').val()}:${$('#selectedate-m-2').val()}`;
     const preferredDate3 = `${$('#selectedate-h-3').val()}:${$('#selectedate-m-3').val()}`;
