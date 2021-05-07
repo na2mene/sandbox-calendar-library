@@ -1,5 +1,5 @@
 const App = {
-  calendar: null,
+  $calendar: null,
   WeekChars: [ '日', '月', '火', '水', '木', '金', '土' ],
   displayDate: null,
 
@@ -20,7 +20,7 @@ const App = {
       dateFormat: 'Y-m-d',
       onChange: self.onChangeCalendar,
     };
-    self.calendar = $('.selector').flatpickr(config);
+    self.$calendar = $('.selector').flatpickr(config);
   },
 
   onChangeCalendar: function(selectedDates, dateStr, instance) {
@@ -28,16 +28,35 @@ const App = {
     App.displayDate = `${targetDate.getFullYear()}年${targetDate.getMonth() + 1}月${targetDate.getDate()}日 (${App.WeekChars[targetDate.getDay()]})`;
     console.log(App.displayDate);
 
-    // DOM動的生成
     $('#labelTime').text(App.displayDate);
+    $('.displayNone').removeClass('displayNone');
+  },
+
+  onSubmit: function() {
+    const $submitEl = $('.submitBtn');
+    const preferredDate1 = `${$('#selectedate-h-1').val()}:${$('#selectedate-m-1').val()}`;
+    const preferredDate2 = `${$('#selectedate-h-2').val()}:${$('#selectedate-m-2').val()}`;
+    const preferredDate3 = `${$('#selectedate-h-3').val()}:${$('#selectedate-m-3').val()}`;
+    $('.result').text(`第一希望日時: ${preferredDate1} \n第二希望日時: ${preferredDate2} \n第三希望日時: ${preferredDate3}`)
+
+  },
+
+  onChangeRadio: function() {
+    const value = $('input:radio[name="target-time"]:checked').val();
+    if (value === '1') {
+      $('.displayNone2').removeClass('displayNone2');
+    } else {
+      $('.timepicker').addClass('displayNone2');
+    }
   },
 
   eventLoader: function() {
     const self = this;
-    console.log('eventLoader');
+    $('.submitBtn').on('click', self.onSubmit);
+    $('.selectedRadio').on('change', self.onChangeRadio);
   },
 }
 
-jQuery(function(){
+$(function(){
   App.initialize().eventLoader();
 });

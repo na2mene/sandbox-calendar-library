@@ -21,20 +21,20 @@
         <div id="timeArea">
           <div id="labelTime"></div>
           <div id="timeSelectGroup">
-            <div>
-              <input type="radio" name="target-time" id="time" value="1">
+            <div class="displayNone">
+              <input class="selectedRadio" type="radio" name="target-time" id="time" value="1">
               <label for="time">時間指定</label>
             </div>
-            <div>
-              <input type="radio" name="target-time" id="anywhere" value="2">
-              <label for="anywhere">終日可能</label>
+            <div class="displayNone">
+              <input class="selectedRadio" type="radio" name="target-time" id="anytime" value="2">
+              <label for="anytime">終日可能</label>
             </div>
           </div>
 
           <!-- ここから時間選択 -->
-          <div class="timepicker">
+          <div class="timepicker displayNone2">
             <div>
-              <select name="selectedate-h" id="selectedate-h">
+              <select class="selectedDate" name="selectedate-h" id="selectedate-h-1">
                 <option value="00">00</option>
                 <option value="01">01</option>
                 <option value="02">02</option>
@@ -60,7 +60,7 @@
                 <option value="22">22</option>
                 <option value="23">23</option>
               </select>
-              <select name="selectedate-m" id="selectedate-m">
+              <select class="selectedDate" name="selectedate-m" id="selectedate-m-1">
                 <option value="00">00</option>
                 <option value="15">15</option>
                 <option value="30">30</option>
@@ -72,9 +72,9 @@
             </div>
           </div>
 
-          <div class="timepicker">
+          <div class="timepicker displayNone2">
             <div>
-              <select name="selectedate-h" id="selectedate-h">
+              <select class="selectedDate" name="selectedate-h" id="selectedate-h-2">
                 <option value="00">00</option>
                 <option value="01">01</option>
                 <option value="02">02</option>
@@ -100,7 +100,7 @@
                 <option value="22">22</option>
                 <option value="23">23</option>
               </select>
-              <select name="selectedate-m" id="selectedate-m">
+              <select class="selectedDate" name="selectedate-m" id="selectedate-m-2">
                 <option value="00">00</option>
                 <option value="15">15</option>
                 <option value="30">30</option>
@@ -112,9 +112,9 @@
             </div>
           </div>
 
-          <div class="timepicker">
+          <div class="timepicker displayNone2">
             <div>
-              <select name="selectedate-h" id="selectedate-h">
+              <select class="selectedDate" name="selectedate-h" id="selectedate-h-3">
                 <option value="00">00</option>
                 <option value="01">01</option>
                 <option value="02">02</option>
@@ -140,7 +140,7 @@
                 <option value="22">22</option>
                 <option value="23">23</option>
               </select>
-              <select name="selectedate-m" id="selectedate-m">
+              <select class="selectedDate" name="selectedate-m" id="selectedate-m-3">
                 <option value="00">00</option>
                 <option value="15">15</option>
                 <option value="30">30</option>
@@ -152,8 +152,13 @@
             </div>
           </div>
 
-          <div class="submitGroup">
+          <div class="submitGroup displayNone">
             <button type="button" class="submitBtn">この日程を指定</button>
+          </div>
+        </div>
+        <div id="displayArea">
+          <div>
+            <pre class="result"></pre>
           </div>
         </div>
       </section>

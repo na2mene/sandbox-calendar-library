@@ -24,6 +24,10 @@
   margin: auto;
 }
 
+#timeSelectWrapper {
+  visibility: none;
+}
+
 #labelTime{
   margin-top: 32px;
   width: inherit;
@@ -52,6 +56,25 @@
 
 .submitBtn {
   width: 100%;
+}
+
+#displayArea {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 32px;
+  width: 320px;
+  margin: auto;
+}
+
+.displayNone {
+  display: none;
+}
+
+.displayNone2 {
+  display: none;
 }
 
 .selector {
