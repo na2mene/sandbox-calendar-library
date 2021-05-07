@@ -2,3 +2,61 @@
   height: 100%;
   overflow: hidden;
 }
+
+#flatpickr {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  width: 320px;
+  margin: auto;
+}
+
+#timeArea {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 32px;
+  width: 320px;
+  margin: auto;
+}
+
+#labelTime{
+  margin-top: 32px;
+  width: inherit;
+}
+
+#timeSelectGroup {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin-top: 20px;
+  width: inherit;
+}
+
+.timepicker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  width: inherit;
+}
+
+.submitGroup {
+  margin-top: 20px;
+  width: inherit;
+}
+
+.submitBtn {
+  width: 100%;
+}
+
+.selector {
+  /* input tag自体を消す */
+  outline: none;
+  border: none;
+  cursor: default;
+}
